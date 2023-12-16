@@ -1,0 +1,16 @@
+h1 {
+    font-family: 'Lobster', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Silkscreen', sans-serif;
+}
+
+#word > * {
+    background-color: black;
+    border-bottom: 5px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+button {
+    background-color: pink;
+}
