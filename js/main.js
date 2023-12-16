@@ -1,7 +1,8 @@
 /*----- constants -----*/
-let guessesleft;
+
 
 /*----- state variables -----*/
+let guessesleft =; 
 
 
 /*----- cached elements  -----*/
