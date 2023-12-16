@@ -1,13 +1,13 @@
-	/*----- constants -----*/
+/*----- constants -----*/
 let guessesleft;
 
-	/*----- state variables -----*/
+/*----- state variables -----*/
 
 
-	/*----- cached elements  -----*/
+/*----- cached elements  -----*/
 
 
-	/*----- event listeners -----*/
+/*----- event listeners -----*/
 
 
-	/*----- functions -----*/
+/*----- functions -----*/
