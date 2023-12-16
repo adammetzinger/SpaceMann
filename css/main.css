@@ -3,15 +3,16 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Silkscreen', sans-serif;
 }
-
-word {
-    display: inline-block;
+#word {
+    display: flex;
+    align-items: center;
 }
-
 #word > * {
+    display: inline-block;
     border-bottom: .5rem solid black;
     width: 5rem;
     height: 5rem;
+    margin: .5rem;
 }
 
 button {
