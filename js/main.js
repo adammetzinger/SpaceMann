@@ -4,7 +4,7 @@ const wordArray = ['fun', 'running', 'sound', 'aaaaaaa'];
 /*----- state variables -----*/
 let guessesleft; 
 let wordguess;
-
+let playerguesses;
 
 
 /*----- cached elements  -----*/
