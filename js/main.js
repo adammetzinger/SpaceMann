@@ -6,8 +6,9 @@ let guessesleft;
 let wordguess;
 
 
-/*----- cached elements  -----*/
 
+/*----- cached elements  -----*/
+const guess = document.querySelector('input');
 
 /*----- event listeners -----*/
 document.querySelector('button').addEventListener('click', buildguess);
@@ -16,5 +17,7 @@ document.querySelector('button').addEventListener('click', buildguess);
 /*----- functions -----*/
 
 function render() {
-    setupBoard();    
+    setupBoard();
+    displayGuesses();
+    displayMessage(); 
 }
