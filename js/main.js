@@ -15,16 +15,16 @@ document.getElementById('wordbuild').addEventListener('click', buildguess);
 document.getElementById(guessselect).addEventListener('click', guessCheck);
 
 /*----- functions -----*/
-function guessCheck() {
-    secretWord.split('').forEach(char => {
-        if (letterguess.toLocaleLowerCase() === char) {
+// function guessCheck() {
+//     secretWord.split('').forEach(char => {
+//         if (letterguess.toLocaleLowerCase() === char) {
 
-        } else {
-            guessesleft - 1
-            
-        }
-    })
-}
+//         } else {
+//             guessesleft - 1
+
+//         }
+//     })
+// }
 
 function chooseWord() {
     let i = Math.floor(Math.random() * wordArray.length);
@@ -33,6 +33,7 @@ function chooseWord() {
 function rednerWord(secretWord) {
     for (let i =0; i < secretWord.length; i++) {
         const div = document.createElement('div');
+        div.innerHTML(secretWord[i]);
         word.appendChild(div);
     }
 }
