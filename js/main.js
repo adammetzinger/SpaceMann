@@ -7,6 +7,7 @@ let guessesleft, letterguess, playerguesses, secretWord;
 /*----- cached elements  -----*/
 const guess = document.querySelector('input');
 const message = document.querySelector('main > h1');
+const letters = document.getElementById('word');
 /*----- event listeners -----*/
 document.querySelector('button').addEventListener('click', buildguess);
 
@@ -14,10 +15,13 @@ document.querySelector('button').addEventListener('click', buildguess);
 /*----- functions -----*/
 function chooseWord() {
     let i = Math.floor(Math.random() * wordArray.length);
-    return wordArray[i];
+    secretWord = wordArray[i];
 }
-function rednerWord() {
-
+function rednerWord(secretWord) {
+    for (let i =0; i < secretWord.length; i++) {
+        const div = document.createElement('div');
+        word.appendChild(div);
+    }
 }
 function displaySpaceman() {
 
