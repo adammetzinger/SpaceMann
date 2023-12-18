@@ -23,21 +23,26 @@ function rednerWord(secretWord) {
         word.appendChild(div);
     }
 }
+
+function render() {
+    // setupBoard();
+    // displaySpaceman();
+    // displayMessage();
+    chooseWord();
+    rednerWord(secretWord);
+}
+function buildguess() {
+    const word = document.getElementById('word');
+    while (word.lastElementChild) {
+        word.removeChild(word.lastElementChild);
+      }
+}
+
 function displaySpaceman() {
 
 }
 
-function render() {
-    setupBoard();
-    displayGuesses();
-    displayMessage(); 
-}
-
 function setupBoard() {
-
-}
-
-function displayGuesses() {
 
 }
 
