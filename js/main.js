@@ -72,11 +72,3 @@ function guessCheck(letterguess) {
 function displaySpaceman() {
     const spaceman = querySelector('main > div > img');
 }
-
-function setupBoard() {
-
-}
-
-function displayMessage() {
-
-}
