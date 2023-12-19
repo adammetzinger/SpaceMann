@@ -37,10 +37,8 @@ function rednerWord(secretWord) {
         const div = document.createElement('div');
         div.setAttribute('id', `${i}`)
         word.appendChild(div);
-        // const newdiv = document.getElementById(`${i}`);
-        // newdiv.innerHTML = secretWord[i];
-        // newdiv.style.fontSize = '80px';
-        // newdiv.style.color = 'white';
+        const newdiv = document.getElementById(`${i}`);
+        newdiv.setAttribute('value', `${secretWord[i]}`);
     }
 }
 
@@ -61,25 +59,22 @@ function buildguess() {
     render();
 }
 
-function keyPressEvt(key) {
-    const found = secretWord.find((element) => element === key.key);
-    console.log(found);
-    // if (key.key === 'g') {
-    //     console.log('hello')
-    // } else {
-    //     console.log(key);
-    // }
+function keyPressEvt(keyedin) {
+    const secretWordArr = secretWord.split('');
+    const letter = secretWordArr.find((element) => element === keyedin.key);
+    if (letter === undefined) {
+        wrongletters.push(keyedin.key);
+    } else {
+        for (let i = 0; i < secretWordArr.length; i++){
+            if (secretWordArr[i] === keyedin.key) {
+                const div = document.getElementById(`${i}`);
+                div.innerHTML = keyedin.key;
+                div.style.fontSize = '80px';
+                div.style.border = 'none';
+            }
+        }
+    }
 }
-
-// function guessCheck(letterguess) {
-//     for (let i = 0; i < secretWord.length; i++) {
-//         if (secretWord[i] = letterguess) {
-//             const newdiv = document.getElementById(`${i}`);
-//             newdiv.innerHTML = secretWord[i];
-//             newdiv.style.fontSize = '80px';
-//         }
-//     }
-// }
 
 function displaySpaceman() {
     const spaceman = querySelector('main > div > img');
