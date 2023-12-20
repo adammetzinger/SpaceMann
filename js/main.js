@@ -19,16 +19,6 @@ const wordArray = [
     'cucumber'
 ];
 
-// const spaceman = {
-//     '0': '',
-//     '1': 'images/1.png',
-//     '2': 'images/2.png',
-//     '3': 'images/3.png',
-//     '4': 'images/4.png',
-//     '5': 'images/5.png',
-//     '6': new URL('../images/6.png')
-// }
-
 /*----- state variables -----*/
 
 let guessesleft, playerguesses, secretWord;
@@ -101,6 +91,7 @@ function keyPressEvt(keyedin) {
         wronglettersEl.innerHTML = ` ${wrongletters}`;
         guessesleft--;
         displaySpaceman()
+        console.log(lowerCase);
     } else {
         for (let i = 0; i < secretWordArr.length; i++){
             if (secretWordArr[i] === lowerCase) {
@@ -122,10 +113,10 @@ function message() {
         messageEl.innerHTML = 'you lost womp womp';
     } else {
         messageEl.innerHTML = `You have ${guessesleft} guesses left`;
+        displaySpaceman();
     }
 }
 
 function displaySpaceman() {
-    // const spaceman = document.querySelector('main > div > img');
-    // spaceman.setAttribute('src', `${spaceman[guessesleft]}`);
+    spaceman.src = `../images/${guessesleft}.png`
 }
