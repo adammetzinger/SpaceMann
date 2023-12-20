@@ -1,6 +1,16 @@
 /*----- constants -----*/
 const wordArray = ['fun', 'running', 'sound', 'aaaaaaa'];
 
+// const spaceman = {
+//     '0': '',
+//     '1': '../images/1.png',
+//     '2': '../images/2.png',
+//     '3': '../images/3.png',
+//     '4': '../images/4.png',
+//     '5': '../images/5.png',
+//     '6': new URL('../images/6.png')
+// }
+
 /*----- state variables -----*/
 let guessesleft, playerguesses, secretWord;
 
@@ -9,23 +19,13 @@ const guess = document.querySelector('input');
 const message = document.querySelector('main > h1');
 const letters = document.getElementById('word');
 const letterguess = document.querySelector('input').value;
-const wrongletters = {};
+const wrongletters = [];
 
 /*----- event listeners -----*/
 document.getElementById('wordbuild').addEventListener('click', buildguess);
-// document.getElementById('guessselect').addEventListener('click', guessCheck(letterguess));
+
 document.querySelector('*').addEventListener('keypress', keyPressEvt);
 /*----- functions -----*/
-// function guessCheck() {
-//     secretWord.split('').forEach(char => {
-//         if (letterguess.toLocaleLowerCase() === char) {
-
-//         } else {
-//             guessesleft - 1
-
-//         }
-//     })
-// }
 
 function chooseWord() {
     let i = Math.floor(Math.random() * wordArray.length);
@@ -37,26 +37,23 @@ function rednerWord(secretWord) {
         const div = document.createElement('div');
         div.setAttribute('id', `${i}`)
         word.appendChild(div);
-        const newdiv = document.getElementById(`${i}`);
-        newdiv.setAttribute('value', `${secretWord[i]}`);
     }
 }
 
-render();
+init();
 
-function render() {
-    // setupBoard();
-    // displaySpaceman();
-    // displayMessage();
+function init() {
     chooseWord();
     rednerWord(secretWord);
+    guessesleft = 3;
+    displaySpaceman()
 }
 function buildguess() {
     const word = document.getElementById('word');
     while (word.lastElementChild) {
         word.removeChild(word.lastElementChild);
     }
-    render();
+    init();
 }
 
 function keyPressEvt(keyedin) {
@@ -64,6 +61,9 @@ function keyPressEvt(keyedin) {
     const letter = secretWordArr.find((element) => element === keyedin.key);
     if (letter === undefined) {
         wrongletters.push(keyedin.key);
+        document.getElementById('wrongletters').innerHTML = ` ${wrongletters}`;
+        guessesleft--;
+        displaySpaceman()
     } else {
         for (let i = 0; i < secretWordArr.length; i++){
             if (secretWordArr[i] === keyedin.key) {
@@ -77,5 +77,6 @@ function keyPressEvt(keyedin) {
 }
 
 function displaySpaceman() {
-    const spaceman = querySelector('main > div > img');
+    // const spaceman = document.querySelector('main > div > img');
+    // spaceman.setAttribute('src', `${spaceman[guessesleft]}`);
 }

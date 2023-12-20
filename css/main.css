@@ -3,6 +3,11 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-family: 'Silkscreen', sans-serif;
 }
+
+#wrongletters {
+    font-size: 40px;
+}
+
 #word {
     display: flex;
     align-items: center;
