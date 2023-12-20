@@ -91,7 +91,6 @@ function keyPressEvt(keyedin) {
         wronglettersEl.innerHTML = ` ${wrongletters}`;
         guessesleft--;
         displaySpaceman()
-        console.log(lowerCase);
     } else {
         for (let i = 0; i < secretWordArr.length; i++){
             if (secretWordArr[i] === lowerCase) {
