@@ -1,6 +1,23 @@
 /*----- constants -----*/
 
-const wordArray = ['fun', 'running', 'sound', 'aaaaaaa'];
+const wordArray = [ 
+    'banana',
+    'orange',
+    'grape',
+    'kiwi',
+    'pear',
+    'melon',
+    'lemon',
+    'peach',
+    'plum',
+    'carrot',
+    'onion',
+    'tomato',
+    'potato',
+    'broccoli',
+    'apple',
+    'cucumber'
+];
 
 // const spaceman = {
 //     '0': '',
@@ -75,22 +92,23 @@ function buildGuess() {
 // gets the key thats pressed if undefined 
 function keyPressEvt(keyedin) {
     const secretWordArr = secretWord.split('');
-    const letter = secretWordArr.find((element) => element === keyedin.key);
+    const lowerCase = keyedin.key.toLowerCase(keyedin.key);
+    const letter = secretWordArr.find((element) => element === lowerCase);
     if (correctLetters.length === secretWordArr.length || wrongletters.length === 6){
         buildGuess();
     } else if (letter === undefined) {
-        wrongletters.push(keyedin.key);
+        wrongletters.push(lowerCase);
         wronglettersEl.innerHTML = ` ${wrongletters}`;
         guessesleft--;
         displaySpaceman()
     } else {
         for (let i = 0; i < secretWordArr.length; i++){
-            if (secretWordArr[i] === keyedin.key) {
+            if (secretWordArr[i] === lowerCase) {
                 const div = document.getElementById(`${i}`);
-                div.innerHTML = keyedin.key;
+                div.innerHTML = lowerCase;
                 div.style.fontSize = '80px';
                 div.style.border = 'none';
-                correctLetters.push(keyedin.key);
+                correctLetters.push(lowerCase);
             }
         }
     }
@@ -103,7 +121,7 @@ function message() {
     } else if (wrongletters.length === 6) {
         messageEl.innerHTML = 'you lost womp womp';
     } else {
-        messageEl.innerHTML = `You have ${guessesleft} guesses leftf`;
+        messageEl.innerHTML = `You have ${guessesleft} guesses left`;
     }
 }
 
