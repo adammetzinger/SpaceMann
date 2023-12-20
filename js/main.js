@@ -118,5 +118,5 @@ function message() {
 }
 
 function displaySpaceman() {
-    spaceman.src = `../images/${guessesleft}.png`
+    spaceman.src = `images/${guessesleft}.png`
 }
