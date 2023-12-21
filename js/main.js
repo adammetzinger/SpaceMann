@@ -1,6 +1,6 @@
 /*----- constants -----*/
 
-const wordArray = [ 
+const wordArray = [
     'banana',
     'orange',
     'grape',
@@ -51,7 +51,7 @@ function chooseWord() {
 }
 
 function rednerWord(secretWord) {
-    for (let i =0; i < secretWord.length; i++) {
+    for (let i = 0; i < secretWord.length; i++) {
         const div = document.createElement('div');
         div.setAttribute('id', `${i}`)
         word.appendChild(div);
@@ -65,6 +65,7 @@ function init() {
     rednerWord(secretWord);
     guessesleft = 6;
     message();
+    displaySpaceman();
 }
 
 function buildGuess() {
@@ -84,15 +85,14 @@ function keyPressEvt(keyedin) {
     const secretWordArr = secretWord.split('');
     const lowerCase = keyedin.key.toLowerCase(keyedin.key);
     const letter = secretWordArr.find((element) => element === lowerCase);
-    if (correctLetters.length === secretWordArr.length || wrongletters.length === 6){
+    if (correctLetters.length === secretWordArr.length || wrongletters.length === 6) {
         buildGuess();
     } else if (letter === undefined) {
         wrongletters.push(lowerCase);
         wronglettersEl.innerHTML = ` ${wrongletters}`;
         guessesleft--;
-        displaySpaceman()
     } else {
-        for (let i = 0; i < secretWordArr.length; i++){
+        for (let i = 0; i < secretWordArr.length; i++) {
             if (secretWordArr[i] === lowerCase) {
                 const div = document.getElementById(`${i}`);
                 div.innerHTML = lowerCase;

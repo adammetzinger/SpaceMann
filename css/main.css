@@ -1,3 +1,6 @@
+main {
+    margin: auto;
+}
 h1, h2 {
     font-family: 'Lobster', sans-serif;
     font-family: 'Open Sans', sans-serif;
@@ -12,14 +15,11 @@ h1, h2 {
     display: flex;
     align-items: center;
 }
+
 #word > * {
     display: inline-block;
     border-bottom: .5rem solid black;
     width: 5rem;
     height: 5rem;
     margin: .5rem;
-}
-
-button {
-    border-radius: 2rem;
 }
