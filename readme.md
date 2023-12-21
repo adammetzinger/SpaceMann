@@ -4,20 +4,18 @@ You guess a letter by just pressing a key on your keyboard and once
 
 # Screenshot
 
-<img src="url to your image on imgur">
-<img src="url to your image on imgur">
+<img src="https://imgur.com/Ddur08n">
 
 # Technologies Used
 
 - JavaScript
 - HTML
 - CSS
-- CardStarter CSS Library
 
 # Getting Started
 
-[Click to View Project Planning](your Trello url here)
-[Click to Play Connect Four!](your deployment url here)
+
+
 
 # Next Steps
 
