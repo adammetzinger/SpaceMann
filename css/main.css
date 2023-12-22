@@ -24,3 +24,8 @@ h1, h2 {
     height: 5rem;
     margin: .5rem;
 }
+
+button {
+    border-radius: .5rem;
+    background-color: white;
+}

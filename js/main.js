@@ -43,6 +43,8 @@ const spaceman = document.querySelector('main > div > img');
 
 document.querySelector('*').addEventListener('keypress', keyPressEvt);
 
+document.querySelector('button').addEventListener('click', buildGuess);
+
 /*----- functions -----*/
 
 function chooseWord() {
@@ -69,15 +71,17 @@ function init() {
 }
 
 function buildGuess() {
-    const word = document.getElementById('word');
-    while (word.lastElementChild) {
-        word.removeChild(word.lastElementChild);
+    if (guessesleft === 0) {
+        const word = document.getElementById('word');
+        while (word.lastElementChild) {
+            word.removeChild(word.lastElementChild);
+        }
+        while (wrongletters.length > 0) {
+            wrongletters.pop();
+        }
+        wronglettersEl.innerHTML = ` ${wrongletters}`;
+        init();
     }
-    while (wrongletters.length > 0) {
-        wrongletters.pop();
-    }
-    wronglettersEl.innerHTML = ` ${wrongletters}`;
-    init();
 }
 
 // gets the key thats pressed if undefined 
@@ -86,7 +90,7 @@ function keyPressEvt(keyedin) {
     const lowerCase = keyedin.key.toLowerCase(keyedin.key);
     const letter = secretWordArr.find((element) => element === lowerCase);
     if (correctLetters.length === secretWordArr.length || wrongletters.length === 6) {
-        buildGuess();
+        
     } else if (letter === undefined) {
         wrongletters.push(lowerCase);
         wronglettersEl.innerHTML = ` ${wrongletters}`;
@@ -108,7 +112,7 @@ function keyPressEvt(keyedin) {
 function message() {
     if (correctLetters.length === secretWord.length) {
         messageEl.innerHTML = 'You Won Congrats!!';
-    } else if (wrongletters.length === 6) {
+    } else if (wrongletters.length === 7) {
         messageEl.innerHTML = 'you lost womp womp';
     } else {
         messageEl.innerHTML = `You have ${guessesleft} guesses left`;
