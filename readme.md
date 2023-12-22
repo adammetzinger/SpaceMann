@@ -1,6 +1,6 @@
 # Space Man
 This game is a hangman inspired guessing game.
-You guess a letter by just pressing a key on your keyboard and once
+You guess a letter by just pressing a key on your keyboard and once you guess the right word you win.
 
 # Screenshot
 
