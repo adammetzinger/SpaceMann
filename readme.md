@@ -4,20 +4,26 @@ You guess a letter by just pressing a key on your keyboard and once
 
 # Screenshot
 
-<img src="https://imgur.com/Ddur08n">
+ ![](/planing/finalgame.png)
 
 # Technologies Used
 
 - JavaScript
 - HTML
 - CSS
+- VS Code
 
 # Getting Started
 
+[Click to play my game](https://adammetzinger.github.io/SpaceMann/)
+
+[Click to View Project Planning](/planing/Psudo%20code.rtf)
+
+![wireFrame](planing/wireframe.png)
 
 
 
 # Next Steps
 
-- Future enhancement one...
-- Future enhancement two... 
+- Add some sound when you guess wrong and when you win
+ 
