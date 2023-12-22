@@ -19,7 +19,7 @@ You guess a letter by just pressing a key on your keyboard and once
 
 [Click to View Project Planning](/planing/Psudo%20code.rtf)
 
-![wireFrame](planing/wireframe.png)
+![](planing/wireframe.png)
 
 
 
